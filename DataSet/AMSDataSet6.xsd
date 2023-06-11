@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AMSDataSet6" targetNamespace="http://tempuri.org/AMSDataSet6.xsd" xmlns:mstns="http://tempuri.org/AMSDataSet6.xsd" xmlns="http://tempuri.org/AMSDataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DBMSProject.Properties.Settings.GlobalReference.Default.AMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fj_flightsTableAdapter" GeneratorDataComponentClassName="fj_flightsTableAdapter" Name="fj_flights" UserDataComponentName="fj_flightsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSConnectionString (Settings)" DbObjectName="AMS.dbo.fj_flights" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT flight_numf, dep_time, arr_time, src_id, dest_id, flight_date FROM dbo.fj_flights</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="flight_numf" DataSetColumn="flight_numf" />
+              <Mapping SourceColumn="dep_time" DataSetColumn="dep_time" />
+              <Mapping SourceColumn="arr_time" DataSetColumn="arr_time" />
+              <Mapping SourceColumn="src_id" DataSetColumn="src_id" />
+              <Mapping SourceColumn="dest_id" DataSetColumn="dest_id" />
+              <Mapping SourceColumn="flight_date" DataSetColumn="flight_date" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AMSDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="AMSDataSet6" msprop:Generator_DataSetName="AMSDataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="fj_flights" msprop:Generator_RowEvHandlerName="fj_flightsRowChangeEventHandler" msprop:Generator_RowDeletedName="fj_flightsRowDeleted" msprop:Generator_RowDeletingName="fj_flightsRowDeleting" msprop:Generator_RowEvArgName="fj_flightsRowChangeEvent" msprop:Generator_TablePropName="fj_flights" msprop:Generator_RowChangedName="fj_flightsRowChanged" msprop:Generator_RowChangingName="fj_flightsRowChanging" msprop:Generator_TableClassName="fj_flightsDataTable" msprop:Generator_RowClassName="fj_flightsRow" msprop:Generator_TableVarName="tablefj_flights" msprop:Generator_UserTableName="fj_flights">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="flight_numf" msprop:Generator_ColumnPropNameInRow="flight_numf" msprop:Generator_ColumnPropNameInTable="flight_numfColumn" msprop:Generator_ColumnVarNameInTable="columnflight_numf" msprop:Generator_UserColumnName="flight_numf" type="xs:int" />
+              <xs:element name="dep_time" msprop:Generator_ColumnPropNameInRow="dep_time" msprop:Generator_ColumnPropNameInTable="dep_timeColumn" msprop:Generator_ColumnVarNameInTable="columndep_time" msprop:Generator_UserColumnName="dep_time" type="xs:duration" minOccurs="0" />
+              <xs:element name="arr_time" msprop:Generator_ColumnPropNameInRow="arr_time" msprop:Generator_ColumnPropNameInTable="arr_timeColumn" msprop:Generator_ColumnVarNameInTable="columnarr_time" msprop:Generator_UserColumnName="arr_time" type="xs:duration" minOccurs="0" />
+              <xs:element name="src_id" msprop:Generator_ColumnPropNameInRow="src_id" msprop:Generator_ColumnPropNameInTable="src_idColumn" msprop:Generator_ColumnVarNameInTable="columnsrc_id" msprop:Generator_UserColumnName="src_id" type="xs:int" />
+              <xs:element name="dest_id" msprop:Generator_ColumnPropNameInRow="dest_id" msprop:Generator_ColumnPropNameInTable="dest_idColumn" msprop:Generator_ColumnVarNameInTable="columndest_id" msprop:Generator_UserColumnName="dest_id" type="xs:int" />
+              <xs:element name="flight_date" msprop:Generator_ColumnPropNameInRow="flight_date" msprop:Generator_ColumnPropNameInTable="flight_dateColumn" msprop:Generator_ColumnVarNameInTable="columnflight_date" msprop:Generator_UserColumnName="flight_date" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:fj_flights" />
+      <xs:field xpath="mstns:flight_numf" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

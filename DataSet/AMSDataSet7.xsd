@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AMSDataSet7" targetNamespace="http://tempuri.org/AMSDataSet7.xsd" xmlns:mstns="http://tempuri.org/AMSDataSet7.xsd" xmlns="http://tempuri.org/AMSDataSet7.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DBMSProject.Properties.Settings.GlobalReference.Default.AMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="airline_infoTableAdapter" GeneratorDataComponentClassName="airline_infoTableAdapter" Name="airline_info" UserDataComponentName="airline_infoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSConnectionString (Settings)" DbObjectName="AMS.dbo.airline_info" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT airline_id, air_name, contact_no, total_flights FROM dbo.airline_info</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="airline_id" DataSetColumn="airline_id" />
+              <Mapping SourceColumn="air_name" DataSetColumn="air_name" />
+              <Mapping SourceColumn="contact_no" DataSetColumn="contact_no" />
+              <Mapping SourceColumn="total_flights" DataSetColumn="total_flights" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AMSDataSet7" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="AMSDataSet7" msprop:Generator_DataSetName="AMSDataSet7">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="airline_info" msprop:Generator_RowEvHandlerName="airline_infoRowChangeEventHandler" msprop:Generator_RowDeletedName="airline_infoRowDeleted" msprop:Generator_RowDeletingName="airline_infoRowDeleting" msprop:Generator_RowEvArgName="airline_infoRowChangeEvent" msprop:Generator_TablePropName="airline_info" msprop:Generator_RowChangedName="airline_infoRowChanged" msprop:Generator_RowChangingName="airline_infoRowChanging" msprop:Generator_TableClassName="airline_infoDataTable" msprop:Generator_RowClassName="airline_infoRow" msprop:Generator_TableVarName="tableairline_info" msprop:Generator_UserTableName="airline_info">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="airline_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="airline_id" msprop:Generator_ColumnPropNameInTable="airline_idColumn" msprop:Generator_ColumnVarNameInTable="columnairline_id" msprop:Generator_UserColumnName="airline_id" type="xs:int" />
+              <xs:element name="air_name" msprop:Generator_ColumnPropNameInRow="air_name" msprop:Generator_ColumnPropNameInTable="air_nameColumn" msprop:Generator_ColumnVarNameInTable="columnair_name" msprop:Generator_UserColumnName="air_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contact_no" msprop:Generator_ColumnPropNameInRow="contact_no" msprop:Generator_ColumnPropNameInTable="contact_noColumn" msprop:Generator_ColumnVarNameInTable="columncontact_no" msprop:Generator_UserColumnName="contact_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_flights" msprop:Generator_ColumnPropNameInRow="total_flights" msprop:Generator_ColumnPropNameInTable="total_flightsColumn" msprop:Generator_ColumnVarNameInTable="columntotal_flights" msprop:Generator_UserColumnName="total_flights" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:airline_info" />
+      <xs:field xpath="mstns:airline_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

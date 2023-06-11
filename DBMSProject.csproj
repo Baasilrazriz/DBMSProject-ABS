@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C96168CC-F0EC-4997-81E1-74E578B89E10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DBMSProject</RootNamespace>
+    <AssemblyName>DBMSProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.1.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\OneDrive\Desktop\University\4th Sem\DBMS LAB\Project\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\SHADDY\DBMSProject(current)v1.4(seats)\DBMSProject(current)v1.4\bin\Debug\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MimeKit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>packages\MimeKit.4.0.0\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=6.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Twilio.6.6.0\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AirlineDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirlineDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AMSDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\CityDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="User\ConfirmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ConfirmPayment.Designer.cs">
+      <DependentUpon>ConfirmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\CountryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login\create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\create.designer.cs">
+      <DependentUpon>create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Api\Email.cs" />
+    <Compile Include="DataSet\FJDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FJDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="User\Flights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Flights.Designer.cs">
+      <DependentUpon>Flights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Forgot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Forgot.Designer.cs">
+      <DependentUpon>Forgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\MyBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\MyBooking.Designer.cs">
+      <DependentUpon>MyBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\PIADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PIADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTools\RoundedButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomTools\RoundPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\Ticketing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Ticketing.designer.cs">
+      <DependentUpon>Ticketing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\ucFlightDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\ucFlightDetails.Designer.cs">
+      <DependentUpon>ucFlightDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UpdateUser.designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\user.Designer.cs">
+      <DependentUpon>user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserDetails.designer.cs">
+      <DependentUpon>UserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading\Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading\Wait.Designer.cs">
+      <DependentUpon>Wait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Api\Whatsapp.cs" />
+    <EmbeddedResource Include="Admin\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ConfirmPayment.resx">
+      <DependentUpon>ConfirmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\create.resx">
+      <DependentUpon>create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\Flights.resx">
+      <DependentUpon>Flights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Forgot.resx">
+      <DependentUpon>Forgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\MyBooking.resx">
+      <DependentUpon>MyBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="User\Ticketing.resx">
+      <DependentUpon>Ticketing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ucFlightDetails.resx">
+      <DependentUpon>ucFlightDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\user.resx">
+      <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserDetails.resx">
+      <DependentUpon>UserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading\Wait.resx">
+      <DependentUpon>Wait.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet\AirlineDataSet.xsc">
+      <DependentUpon>AirlineDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AirlineDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AirlineDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AirlineDataSet.xss">
+      <DependentUpon>AirlineDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet.xsc">
+      <DependentUpon>AMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet.xss">
+      <DependentUpon>AMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet1.xsc">
+      <DependentUpon>AMSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet1.xss">
+      <DependentUpon>AMSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet10.xsc">
+      <DependentUpon>AMSDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet10.xss">
+      <DependentUpon>AMSDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet11.xsc">
+      <DependentUpon>AMSDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet11.xss">
+      <DependentUpon>AMSDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet12.xsc">
+      <DependentUpon>AMSDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet12.xss">
+      <DependentUpon>AMSDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet13.xsc">
+      <DependentUpon>AMSDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet13.xss">
+      <DependentUpon>AMSDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet14.xsc">
+      <DependentUpon>AMSDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet14.xss">
+      <DependentUpon>AMSDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet15.xsc">
+      <DependentUpon>AMSDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet15.xss">
+      <DependentUpon>AMSDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet16.xsc">
+      <DependentUpon>AMSDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet16.xss">
+      <DependentUpon>AMSDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet17.xsc">
+      <DependentUpon>AMSDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet17.xss">
+      <DependentUpon>AMSDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet2.xsc">
+      <DependentUpon>AMSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet2.xss">
+      <DependentUpon>AMSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet3.xsc">
+      <DependentUpon>AMSDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet3.xss">
+      <DependentUpon>AMSDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet4.xsc">
+      <DependentUpon>AMSDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet4.xss">
+      <DependentUpon>AMSDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet5.xsc">
+      <DependentUpon>AMSDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet5.xss">
+      <DependentUpon>AMSDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet6.xsc">
+      <DependentUpon>AMSDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet6.xss">
+      <DependentUpon>AMSDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet7.xsc">
+      <DependentUpon>AMSDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet7.xss">
+      <DependentUpon>AMSDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet8.xsc">
+      <DependentUpon>AMSDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet8.xss">
+      <DependentUpon>AMSDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet9.xsc">
+      <DependentUpon>AMSDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AMSDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\AMSDataSet9.xss">
+      <DependentUpon>AMSDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\CityDataSet.xsc">
+      <DependentUpon>CityDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\CityDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CityDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\CityDataSet.xss">
+      <DependentUpon>CityDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\CountryDataSet.xsc">
+      <DependentUpon>CountryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\CountryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CountryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\CountryDataSet.xss">
+      <DependentUpon>CountryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSet13.xsc">
+      <DependentUpon>DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSet13.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet13.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSet13.xss">
+      <DependentUpon>DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\FJDataSet.xsc">
+      <DependentUpon>FJDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\FJDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FJDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\FJDataSet.xss">
+      <DependentUpon>FJDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="DataSet\PIADataSet.xsc">
+      <DependentUpon>PIADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\PIADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PIADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\PIADataSet.xss">
+      <DependentUpon>PIADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
